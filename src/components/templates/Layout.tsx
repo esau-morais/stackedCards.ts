@@ -11,7 +11,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
           Skip to stacked cards
         </a>
       </header>
-      <main className='max-w-4xl mx-2 md:mx-auto flex flex-col items-center justify-center'>
+      <main data-testid='viewport' className='max-w-4xl mx-2 md:mx-auto flex flex-col items-center justify-center'>
         {children}
       </main>
       <footer className='w-full flex items-center justify-center space-x-2 py-8'>

@@ -1,8 +1,9 @@
 import { useEffect, useRef } from 'react'
 
+import { Card } from '@/lib/types'
 import { useSpring, animated } from '@react-spring/web'
 
-const cards = [
+const cards: Array<Card> = [
   {
     id: 1,
     imageUrl: 'https://codyhouse.co/app/assets/img/stacking-cards-img-1.jpg'
@@ -46,6 +47,7 @@ const StackedCards = () => {
       {cards.map((card) => (
         <animated.div
           key={card.id}
+          role='listitem'
           ref={(el) => cardsRef.current[card.id] = el as HTMLDivElement}
           className='transition-transform w-full top-5 overflow-hidden rounded-lg sticky origin-[center_top] mb-lg'
           style={{
