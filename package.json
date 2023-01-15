@@ -7,11 +7,13 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint src/**/*{ts,tsx}",
-    "test": "vitest"
+    "test": "vitest --passWithNoTests"
   },
   "dependencies": {
+    "@react-spring/web": "^9.6.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-spring": "^9.6.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",

@@ -8,23 +8,23 @@ on:
 
 jobs:
   lint:
-    name: ⬣ CI 
+    name: ⬣ Lint
     runs-on: ubuntu-latest
     steps:
-      - name: ⬇️ Checkout repo
-        uses: actions/checkout@v3
-
-      - name: ⎔ Setup node
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: "yarn"
+          version: 6.32.9
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'pnpm'
 
       - name: 📥 Install deps
-        run: yarn --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: 🔬 Lint
-        run: yarn lint
+        run: pnpm lint
 
       - name: 🧪 Test
-        run: yarn test
+        run: pnpm test

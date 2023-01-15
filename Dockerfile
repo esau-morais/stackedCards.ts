@@ -1,12 +1,14 @@
 FROM node:16-alpine as build
 
+RUN npm install -g pnpm
+
 WORKDIR /app
 COPY package.json yarn.lock ./
 
-RUN yarn install
+RUN pnpm install
 COPY . .
-RUN yarn build
+RUN pnpm build
 
 EXPOSE 3000
 
-CMD ["yarn", "dev"]
+CMD ["pnpm", "dev"]
