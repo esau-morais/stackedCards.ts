@@ -2,14 +2,14 @@
 
 Cool stacked cards component animation on scroll
 
-![stackedCards showcase GIF](./public/stackedCards.gif)
+![stackedCards showcase GIF](https://github.com/esau-morais/stackedCards.ts/blob/7a2ac7e77b892a695cf409cab2c57f2d67372ea8/public/stackedCards.gif)
 
 ## 🛠️ Setup
 
 1. Clone the project
 
 ```
-gh repo clone your-username/stackedCards.ts
+gh repo clone esau-morais/stackedCards.ts
 ```
 
 3. Installing (using `pnpm`)
