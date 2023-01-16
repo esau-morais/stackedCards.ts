@@ -1,35 +1,27 @@
-# boilerplate.ts
-⚛️ React + TypeScript Boilerplate
+# Stacked Cards
 
-## ⚡ Features
+Cool stacked cards component animation on scroll
 
-- [X] ESLint most used rules
-- [X] Tailwind CSS default configuration
-- [X] Unit testing with Vitest
-- [X] Continuous Integration with GitHub Actions
-- [ ] E2E Testing with Cypress
-- [X] Dockerize project
+![stackedCards showcase GIF](./public/stackedCards.gif)
 
 ## 🛠️ Setup
 
-1. If you're already logged in, you'll be able to see the "Use this template" button. Click it and create a new repository
-
-2. Clone
+1. Clone the project
 
 ```
-gh repo clone your-username/boilerplate.ts
+gh repo clone your-username/stackedCards.ts
 ```
 
-3. Installing (using yarn)
+3. Installing (using `pnpm`)
 
 ```
-yarn install 
+pnpm install 
 ```
 
-4. Running (using yarn)
+4. Running (using `pnpm`)
 
 ```
-yarn dev
+pnpm dev
 ```
 
 > :information_source: If you want to use Docker alternatively, check down below:
@@ -44,6 +36,12 @@ docker compose build
 
 ```
 docker compose up
+```
+
+5. Testing
+
+```
+pnpm test
 ```
 
 ## ✏️ LICENSE

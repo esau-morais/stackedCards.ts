@@ -20,7 +20,7 @@ const cards: Array<Card> = [
 
 const StackedCards = () => {
   const cardsRef = useRef<HTMLDivElement[]>([])
-  const [props, set] = useSpring(() => ({
+  const [{ y: { to } }, set] = useSpring(() => ({
     from: { y: 0 },
     to: { y: 0 }
   }))
@@ -39,7 +39,7 @@ const StackedCards = () => {
     cardsRef.current.forEach((card) => {
       observer.observe(card)
     })
-  }, [])
+  }, [set])
 
 
   return (
@@ -51,7 +51,7 @@ const StackedCards = () => {
           ref={(el) => cardsRef.current[card.id] = el as HTMLDivElement}
           className='transition-transform w-full top-5 overflow-hidden rounded-lg sticky origin-[center_top] mb-lg'
           style={{
-            transform: props.y.to((y) => `translateY(-${10 * y}px)`),
+            transform: to((y) => `translateY(-${10 * y}px)`),
           }}
         >
           <img className='aspect-[2/1] abolute top-0 left-0 w-full h-full object-cover' src={card.imageUrl} alt="" />
