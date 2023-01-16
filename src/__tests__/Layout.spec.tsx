@@ -26,7 +26,7 @@ describe('Layout', () => {
   it('should render default styling when scroll event has not been triggered', () => {
     renderSut()
 
-    expect(screen.getAllByRole('listitem')[0]).toHaveStyle('transform: translateY(0px)')
+    expect(screen.getAllByRole('listitem')[0]).toHaveStyle('transform: translate3d(0px, 0px, 0px)')
   })
 
   // it should calls IntersectionObserver and transform vertically when scroll is triggered
