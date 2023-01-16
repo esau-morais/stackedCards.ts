@@ -20,7 +20,7 @@ const cards: Array<Card> = [
 
 const StackedCards = () => {
   const cardsRef = useRef<HTMLDivElement[]>([])
-  const [{ y: { to } }, set] = useSpring(() => ({
+  const [props, set] = useSpring(() => ({
     from: { y: 0 },
     to: { y: 0 }
   }))
@@ -43,15 +43,17 @@ const StackedCards = () => {
 
 
   return (
-    <ul className='my-16 w-full flex flex-col gap-4'>
+    <ul className='w-full flex flex-col gap-4 h-[200vh]'>
       {cards.map((card) => (
         <animated.div
           key={card.id}
           role='listitem'
           ref={(el) => cardsRef.current[card.id] = el as HTMLDivElement}
-          className='transition-transform w-full top-5 overflow-hidden rounded-lg sticky origin-[center_top] mb-lg'
+          className='transition-transform w-full sticky top-[5vh] overflow-hidden shadow-lg border-pink-200 rounded-lg origin-[center_top] mb-lg'
           style={{
-            transform: to((y) => `translateY(-${10 * y}px)`),
+            willChange: 'background, transform',
+            transform: props.y.to((y) => `translate3d(0px, -${10 * y}px, 0px)`),
+            transformStyle: 'preserve-3d'
           }}
         >
           <img className='aspect-[2/1] abolute top-0 left-0 w-full h-full object-cover' src={card.imageUrl} alt="" />

@@ -25,6 +25,7 @@
     "eslint-plugin-import-helpers"
   ],
   "rules": {
+    "react/prop-types": "warn",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "@typescript-eslint/no-unused-vars": "error",
@@ -38,16 +39,32 @@
     ],
     "prefer-arrow-callback": [
       "error",
-      { "allowNamedFunctions": true }
+      {
+        "allowNamedFunctions": true
+      }
     ],
     "func-style": [
       "error",
       "expression",
-      { "allowArrowFunctions": true }
+      {
+        "allowArrowFunctions": true
+      }
     ],
-    "quotes": [2, "single", { "avoidEscape": true }],
-    "semi": [ "error", "never" ],
-    "object-curly-spacing": ["error", "always"],
+    "quotes": [
+      2,
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "semi": [
+      "error",
+      "never"
+    ],
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ],
     "import-helpers/order-imports": [
       "warn",
       {
@@ -61,9 +78,16 @@
           "/^lib/",
           "/^services/",
           "/^utils/",
-          ["parent", "sibling", "index"]
+          [
+            "parent",
+            "sibling",
+            "index"
+          ]
         ],
-        "alphabetize": { "order": "asc", "ignoreCase": true }
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        }
       }
     ]
   }
